@@ -14,8 +14,7 @@ namespace CredNet
     {
         public static BiDictionary<uint, IControl> ControlTable = new BiDictionary<uint, IControl>();
 
-        public static ConditionalWeakTable<Bitmap, BitmapHandleStore> BitmapHandles =
-            new ConditionalWeakTable<Bitmap, BitmapHandleStore>();
+        public static ConditionalWeakTable<Bitmap, BitmapHandleStore> BitmapHandles = new ConditionalWeakTable<Bitmap, BitmapHandleStore>();
 
         public static uint GetControlID(IControl control)
         {
@@ -24,7 +23,7 @@ namespace CredNet
                 return key;
             }
 
-            key = unchecked((uint) RuntimeHelpers.GetHashCode(control));
+            key = (uint)ControlTable.Count;// unchecked((uint) RuntimeHelpers.GetHashCode(control));
 
             ControlTable.Add(key, control);
 

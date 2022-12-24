@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Security;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using CredNet.Controls;
-using CredNet.Interface;
 using CredNet.Interop;
 
 namespace CredNet
@@ -21,23 +12,29 @@ namespace CredNet
         internal bool Supported { get; set; }
 
         public List<ICredentialProviderUser> Users { get; internal set; } = new List<ICredentialProviderUser>();
+
         public UsageScenario UsageScenario { get; internal set; }
+
+        public CredUIWinFlags UsageFlags { get; internal set; }
+
         public ICredentialProviderEvents Events { get; internal set; }
         public IntPtr AdviseContext { get; internal set; }
 
         public List<UserCredential> Credentials { get; set; } = new List<UserCredential>();
         public UserCredential DefaultCredential { get; set; }
 
-        public abstract bool IsUsageSupported(UsageScenario usage);
+        public abstract bool IsUsageSupported(UsageScenario usage, CredUIWinFlags dwFlags);
         public abstract void Initialize();
 
         public abstract void Dispose();
 
-        public int SetUsageScenario(UsageScenario cpus, uint dwFlags)
+        public int SetUsageScenario(UsageScenario cpus, CredUIWinFlags flags)
         {
             UsageScenario = cpus;
-            Supported = IsUsageSupported(cpus);
+            UsageFlags = flags;
 
+            Trace.WriteLine($"UsageScenario: {cpus}, Flags: {flags}");
+            Supported = IsUsageSupported(cpus, flags);
             return Supported ? HRESULT.S_OK : HRESULT.E_NOTIMPL;
         }
 
@@ -73,18 +70,24 @@ namespace CredNet
             return HRESULT.S_OK;
         }
 
-        public unsafe int GetFieldDescriptorCount(out uint pdwCount)
+        public int GetFieldDescriptorCount(out uint pdwCount)
         {
             FieldDescriptorsPointers.Clear();
 
             foreach (var credential in Credentials)
+            {
                 foreach (var control in credential.Controls)
                 {
-                    var ptr = Marshal.AllocCoTaskMem(sizeof(FieldDescriptor));
-                    *(FieldDescriptor*)ptr = control.GetFieldDescriptor();
+                    var item = control.GetFieldDescriptor();
 
+                    var size = Marshal.SizeOf<FieldDescriptor>();
+                    var ptr = Marshal.AllocCoTaskMem(size);
+
+
+                    Marshal.StructureToPtr<FieldDescriptor>(item, ptr, false);
                     FieldDescriptorsPointers.Add(ptr);
                 }
+            }
 
             pdwCount = (uint)FieldDescriptorsPointers.Count;
             return HRESULT.S_OK;

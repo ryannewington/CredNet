@@ -321,7 +321,7 @@ namespace CredNet
             try
             {
                 sid = Credential.GetUserSid();
-                return HRESULT.S_OK;
+                return sid == null ? HRESULT.S_FALSE : HRESULT.S_OK;
             }
             catch
             {
