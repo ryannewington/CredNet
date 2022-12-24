@@ -13,7 +13,7 @@ namespace CredNet.Interop
 	{
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int SetUsageScenario([In] UsageScenario cpus, [In] uint dwFlags);
+		int SetUsageScenario([In] UsageScenario cpus, [In] CredUIWinFlags dwFlags);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]

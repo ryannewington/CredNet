@@ -12,39 +12,39 @@ namespace CredNet.Interop
 	{
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int SetFieldState([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] FieldState cpfs);
+        new int SetFieldState([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] FieldState cpfs);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int SetFieldInteractiveState([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] FieldInteractiveState cpfis);
+        new int SetFieldInteractiveState([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] FieldInteractiveState cpfis);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int SetFieldString([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [MarshalAs(UnmanagedType.LPWStr)] [In] string psz);
+        new int SetFieldString([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [MarshalAs(UnmanagedType.LPWStr)] [In] string psz);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int SetFieldCheckbox([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] int bChecked, [MarshalAs(UnmanagedType.LPWStr)] [In] string pszLabel);
+        new int SetFieldCheckbox([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] int bChecked, [MarshalAs(UnmanagedType.LPWStr)] [In] string pszLabel);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int SetFieldBitmap([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] IntPtr hbmp);
+        new int SetFieldBitmap([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] IntPtr hbmp);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int SetFieldComboBoxSelectedItem([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] uint dwSelectedItem);
+        new int SetFieldComboBoxSelectedItem([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] uint dwSelectedItem);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int DeleteFieldComboBoxItem([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] uint dwItem);
+        new int DeleteFieldComboBoxItem([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] uint dwItem);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int AppendFieldComboBoxItem([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [MarshalAs(UnmanagedType.LPWStr)] [In] string pszItem);
+        new int AppendFieldComboBoxItem([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [MarshalAs(UnmanagedType.LPWStr)] [In] string pszItem);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int SetFieldSubmitButton([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] uint dwAdjacentTo);
+        new int SetFieldSubmitButton([MarshalAs(UnmanagedType.Interface)] [In] ICredentialProviderCredential pcpc, [In] uint dwFieldID, [In] uint dwAdjacentTo);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]

@@ -11,7 +11,7 @@ namespace CredNet.Interop
 	{
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int QueryContinue();
+        new int QueryContinue();
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]

@@ -70,13 +70,17 @@ namespace CredNet.Controls
         public UserCredential Credential { get; internal set; }
 
         public abstract FieldType GetFieldType();
-        
+
+        public virtual Guid GetFieldTypeGuid() => default(Guid);
+
         public FieldDescriptor GetFieldDescriptor()
         {
             return new FieldDescriptor()
             {
-                FieldID = ID, FieldType = GetFieldType(),
-                Label = Label, FieldTypeGuid = default(Guid)
+                FieldID = ID,
+                FieldType = GetFieldType(),
+                Label = Label,
+                FieldTypeGuid = this.GetFieldTypeGuid()
             };
         }
 

@@ -14,7 +14,7 @@ namespace CredNet.Interop
 	{
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		public virtual extern int SetUsageScenario([In] UsageScenario cpus, [In] uint dwFlags);
+		public virtual extern int SetUsageScenario([In] UsageScenario cpus, [In] CredUIWinFlags dwFlags);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]

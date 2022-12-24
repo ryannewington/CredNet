@@ -9,13 +9,18 @@ namespace CredNet.Controls
 {
     public class SmallLabel : FieldControl
     {
-        public override FieldType GetFieldType() =>
-            FieldType.SmallText;
+        public override FieldType GetFieldType() => FieldType.SmallText;
     }
 
     public class BigLabel : FieldControl
     {
-        public override FieldType GetFieldType() =>
-            FieldType.LargeText;
+        public override FieldType GetFieldType() => FieldType.LargeText;
+    }
+
+    public class SmallLabelCredentialProviderLabel : FieldControl
+    {
+        public override Guid GetFieldTypeGuid() => FieldTypeGuids.CPFG_CREDENTIAL_PROVIDER_LABEL;
+
+        public override FieldType GetFieldType() => FieldType.SmallText;
     }
 }

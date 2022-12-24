@@ -11,11 +11,11 @@ namespace CredNet.Interop
 	{
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int RemoteRead(out byte pv, [In] uint cb, out uint pcbRead);
+        new int RemoteRead(out byte pv, [In] uint cb, out uint pcbRead);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]
-		int RemoteWrite([In] ref byte pv, [In] uint cb, out uint pcbWritten);
+        new int RemoteWrite([In] ref byte pv, [In] uint cb, out uint pcbWritten);
 
 		[MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall)]
 		[return: MarshalAs(UnmanagedType.Error)]

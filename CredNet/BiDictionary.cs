@@ -37,21 +37,23 @@ namespace CredNet
             get => Forward[key];
         }
 
-        public class Indexer<TKey, TValue>
+        public int Count { get => ForwardCollection.Count; }
+
+        public class Indexer<TKey2, TValue2>
         {
-            private readonly IDictionary<TKey, TValue> mTarget;
+            private readonly IDictionary<TKey2, TValue2> mTarget;
             
-            public Indexer(IDictionary<TKey, TValue> dic)
+            public Indexer(IDictionary<TKey2, TValue2> dic)
             {
                 mTarget = dic;
             }
 
-            public bool TryGetValue(TKey key, out TValue value)
+            public bool TryGetValue(TKey2 key, out TValue2 value)
             {
                 return mTarget.TryGetValue(key, out value);
             }
 
-            public TValue this[TKey index]
+            public TValue2 this[TKey2 index]
             {
                 get => mTarget[index];
             }

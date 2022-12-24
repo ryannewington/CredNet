@@ -15,7 +15,7 @@ namespace CredNet
         public abstract ManagedCredentialSerialization UpdateRemoteCredential(
             ManagedCredentialSerialization inputSerialization);
 
-        public unsafe int Filter(UsageScenario cpus, uint dwFlags, IntPtr rgclsidProviders, IntPtr rgbAllow, uint cProviders)
+        public unsafe int Filter(UsageScenario cpus, CredUIWinFlags dwFlags, IntPtr rgclsidProviders, IntPtr rgbAllow, uint cProviders)
         {
             Guid* pProviders = (Guid*) rgclsidProviders.ToPointer();
             bool* pAllow = (bool*) rgbAllow.ToPointer();

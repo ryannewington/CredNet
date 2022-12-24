@@ -44,4 +44,9 @@ namespace CredNet.Controls
             }
         }
     }
+
+    public class CredProviderLogo : TileBitmap
+    {
+        public override Guid GetFieldTypeGuid() => FieldTypeGuids.CPFG_CREDENTIAL_PROVIDER_LOGO;
+    }
 }

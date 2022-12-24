@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CredNet</RootNamespace>
     <AssemblyName>CredNet</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -45,8 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\lithnet\access-manager\src\Lithnet.AccessManager\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -69,6 +69,7 @@
     <Compile Include="CredUI.cs" />
     <Compile Include="DataBindingCollection.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="FieldTypeGuids.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Interface\IControl.cs" />
     <Compile Include="Controls\Label.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Interface\IReportResult.cs" />
     <Compile Include="Interface\IValueConverter.cs" />
     <Compile Include="Interop\AccountOptions.cs" />
+    <Compile Include="Interop\CredUIWinFlags.cs" />
     <Compile Include="Interop\FieldDescriptor.cs" />
     <Compile Include="Interop\FieldInteractiveState.cs" />
     <Compile Include="Interop\FieldOptions.cs" />
